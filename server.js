@@ -1,9 +1,24 @@
 var express = require("express");
+//var localtunnel = require("localtunnel");
+var ngrok = require("ngrok");
+
+
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
 var port = 3000;
 
+/* Code for localtunnel
+var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel){
+	if(err){
+		console.log("Tunnel error: " + err);
+	}else{
+		console.log("Tunnel opened without error on port: " + port + " at: " + tunnel.url);
+	}
+});
+*/
+
+ngrok.connect(function(err,url){});
 
 router.use(function (req,res,next) {
   console.log("/" + req.method + ":" + req.originalUrl);
@@ -13,11 +28,14 @@ router.use(function (req,res,next) {
 //if asking for something with an extension, it is a resource
  router.get("/*.*",function(req,res){
 	 res.sendFile(path+req.originalUrl,function(err){
-		 if(err){console.log("error with path: " + err.path + " ("+err.status+")")};
+		 if(err){
+			 console.log("error with path: " + err.path + " ("+err.status+")");
+			 res.end();
+			 };
 	 });
  });
 
- /*
+ /* This will be handled in the future
 //if asking for something preceded by '#' then this is a section
 router.get("/#*",function(req,res){
 	
