@@ -23,11 +23,65 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	
+	<!-- jQuery -->
+    <script src="js/jquery.js" type="text/javascript"></script>
 </head>
 
 <body>
+	<div id="fb-root"></div>
+	<!--Facebook initializer Script-->
+	<script>
+	
+	console.log("initializing fb sdk");
+	
+	//this function is called after the SDK is loaded
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '430107553824095',
+			xfbml      : false,
+			version    : 'v2.8',
+			status	   : true
+		});
+		//FB.AppEvents.logPageView();
 
+
+		/* Bare login stuff
+		FB.getLoginStatus(function(res){
+		console.log("getting login status...");
+		if(res.status == 'connected'){
+			console.log('logged in!');
+			
+		}
+		//else if (res.status == 'not_authorized'){console.log('logged in, but not authorized');}
+		else{
+			FB.login(function(res){
+				if(res.status == "connected"){
+				console.log("hooray! logged in successfully");
+				}else{
+				console.log("oops, login didn't take!");
+				}
+			});
+			console.log('logging in');
+			}
+		}); */
+		//$("#fb-login-wrapper").append('');
+		
+	};
+
+	//this actually loads the SDK
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=430107553824095";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	console.log("fb sdk initialized");
+	
+	
+	</script>
+	
     <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
@@ -53,8 +107,8 @@
 					    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                         <h1>Home</h1>
                         <p>This is the home page!</p>
-						
-                    </div>
+						<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
+					</div>
                 </div>
             </div>
         </div>
@@ -63,31 +117,7 @@
     </div>
     <!-- /#wrapper -->
 	
-	<!--Facebook initializer Script-->
-	<script>
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '430107553824095',
-			xfbml      : false,
-			version    : 'v2.8',
-			status	   : true
-		});
-		FB.AppEvents.logPageView();
-	};
-
-	(function(d, s, id){
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	</script>
-	
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
+	<!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 	
 	<!-- Client.js Script -->
@@ -96,8 +126,8 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+	
 	</script>
-	<script src="js/index.js"></script>
 	
 </body>
 

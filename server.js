@@ -1,14 +1,33 @@
+var fs = require("fs");
 var express = require("express");
-//var localtunnel = require("localtunnel");
-var ngrok = require("ngrok");
-
+var localtunnel = require("localtunnel");
+//var ngrok = require("ngrok");
 
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
 var port = 3000;
 
-/* Code for localtunnel
+/* Code for ngrok
+var ngroktok;
+fs.readFile('ngrok.txt','utf8',function(err,contents){
+	if(err){
+		ngroktok = "";
+		}else{
+		ngroktok = contents;
+		}
+});
+
+ngrok.connect({addr:3000,authtoken:ngroktok},function(err,url){
+	if(err){
+		console.log(err);
+	}else{
+		console.log("running ngrok at: " + url);
+	}
+		});
+*/
+
+
 var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel){
 	if(err){
 		console.log("Tunnel error: " + err);
@@ -16,9 +35,7 @@ var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel)
 		console.log("Tunnel opened without error on port: " + port + " at: " + tunnel.url);
 	}
 });
-*/
 
-ngrok.connect(function(err,url){});
 
 router.use(function (req,res,next) {
   console.log("/" + req.method + ":" + req.originalUrl);
