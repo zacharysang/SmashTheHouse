@@ -26,63 +26,15 @@
 	
 	<!-- jQuery -->
     <script src="js/jquery.js" type="text/javascript"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
 </head>
 
 <body>
 	<div id="fb-root"></div>
-	<!--Facebook initializer Script-->
-	<script>
-	
-	console.log("initializing fb sdk");
-	
-	//this function is called after the SDK is loaded
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '430107553824095',
-			xfbml      : false,
-			version    : 'v2.8',
-			status	   : true
-		});
-		//FB.AppEvents.logPageView();
-
-
-		/* Bare login stuff
-		FB.getLoginStatus(function(res){
-		console.log("getting login status...");
-		if(res.status == 'connected'){
-			console.log('logged in!');
-			
-		}
-		//else if (res.status == 'not_authorized'){console.log('logged in, but not authorized');}
-		else{
-			FB.login(function(res){
-				if(res.status == "connected"){
-				console.log("hooray! logged in successfully");
-				}else{
-				console.log("oops, login didn't take!");
-				}
-			});
-			console.log('logging in');
-			}
-		}); */
-		//$("#fb-login-wrapper").append('');
-		
-	};
-
-	//this actually loads the SDK
-	(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=430107553824095";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	console.log("fb sdk initialized");
-	
-	
-	</script>
-	
-    <div id="wrapper" class="toggled">
+	<div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -117,17 +69,9 @@
     </div>
     <!-- /#wrapper -->
 	
-	<!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 	
 	<!-- Client.js Script -->
-    <script>
-	$("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-	
-	</script>
+    <script src="client.js" text="text/javascript"></script>
 	
 </body>
 
