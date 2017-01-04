@@ -31,4 +31,5 @@ $("#menu-toggle").click(function(e) {
 	};
 
 //login code
+	//once logged in with facebook, register auth session with server
 
