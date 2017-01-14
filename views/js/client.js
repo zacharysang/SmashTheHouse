@@ -1,3 +1,13 @@
+$(document).ready(function(){
+	$(".include").each(function(){
+		console.log("loading include");
+		console.log("url: " + $(this).attr("src"));
+		$(this).load($(this).attr("src"));
+	})
+	
+	console.log("includes included");
+});
+
 //menu button toggling
 $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -29,7 +39,3 @@ $("#menu-toggle").click(function(e) {
 		});
 		
 	};
-
-//login code
-	//once logged in with facebook, register auth session with server
-

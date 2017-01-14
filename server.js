@@ -16,9 +16,10 @@ var path = __dirname + '/views/';
 var port = 3000;
 var appid = "430107553824095";
 var host = '127.0.0.1:3000'
+var startTime = new Date();
 
 //set up localtunnel 
-/*
+
 var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel){
 	if(err){
 		console.log("Tunnel error: " + err);
@@ -26,7 +27,7 @@ var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel)
 		console.log("Tunnel opened without error on port: " + port + " at: " + tunnel.url);
 	}
 });
-*/
+
 
 //set up session initialization for each client
 app.use(cookieParser("h,U']=wSI3\"iURoF&ex/TO7B\"V4xo2"));
@@ -96,9 +97,9 @@ router.get("/",function(req,res){
 				if(err){
 					if(err.status == 404){
 						//but catch error with 404
-						res.sendFile(path + "404.html");
+						res.sendFile(path + "other-html/404.html");
 					}else{
-						res.sendFile(path + "error.html");
+						res.sendFile(path + "other-html/error.html");
 					}
 				}
 			})
@@ -107,9 +108,9 @@ router.get("/",function(req,res){
 				if(err){
 					if(err.status == 404){
 						//but catch error with 404
-						res.sendFile(path + "404.html");
+						res.sendFile(path + "other-html/404.html");
 					}else{
-						res.sendFile(path + "error.html");
+						res.sendFile(path + "other-html/error.html");
 					}
 				}
 			});
@@ -120,9 +121,9 @@ router.get("/",function(req,res){
 				if(err){
 					if(err.status == 404){
 						//but catch error with 404
-						res.sendFile(path + "404.html");
+						res.sendFile(path + "other-html/404.html");
 					}else{
-						res.sendFile(path + "error.html");
+						res.sendFile(path + "other-html/error.html");
 					}
 				}
 			});
@@ -132,7 +133,7 @@ router.get("/",function(req,res){
   
 //if requesting something with a file extension, it is a resource
 //if from js or css folder, let it go without authentication
- router.get("((/js)|(/css))*.*",function(req,res){
+ router.get("((/js)|(/css)|(/other-html))*.*",function(req,res){
 	 res.sendFile(path+req.originalUrl,function(err){
 		 if(err){
 			 console.log("error with path: " + err.path + " ("+err.status+")");
@@ -150,14 +151,14 @@ router.get("/*/",function(req,res){
 				if(err){
 					if(err.status == 404){
 						//but catch error with 404
-						res.sendFile(path + "404.html");
+						res.sendFile(path + "other-html/404.html");
 					}else{
-						res.sendFile(path + "error.html");
+						res.sendFile(path + "other-html/error.html");
 					}
 				}
 			});
 	}else{
-		res.sendFile(path + "noauth.html");
+		res.sendFile(path + "other-html/noauth.html");
 	}
   });
 

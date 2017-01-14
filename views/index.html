@@ -31,18 +31,7 @@
     <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="/home/">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="/announcements/">Announcements</a>
-                </li>
-            </ul>
-        </div>
+        <div id="sidebar-wrapper" class="include" src="/html-includes/sidebar.html"></div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -71,13 +60,8 @@
     <script src="../js/bootstrap.min.js"></script>
 
     <!-- Menu Toggle Script -->
-    <!--script src="../js/index.js"></script-->
-    <script>
-	$("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-	</script>
+    <script src="../js/client.js"></script>
+    
 
 </body>
 
