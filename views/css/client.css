@@ -1,0 +1,10 @@
+@keyframes circle-swell {
+	from {r:50;}
+	to {r:50*1.1;}
+}
+
+circle:hover{
+	r:calc(50*1.1);
+	animation-name: circle-swell;
+	animation-duration: 0.5s;
+}
