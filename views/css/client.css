@@ -3,7 +3,7 @@
 	to {r:45%;}
 }
 
-circle:hover{
+#nav-button:hover > circle{
 	r:45%;
 	animation-name: circle-swell;
 	animation-duration: 0.5s;
