@@ -1,10 +1,10 @@
 @keyframes circle-swell {
-	from {r:45%;}
-	to {r:50%;}
+	from {r:40%;}
+	to {r:45%;}
 }
 
 circle:hover{
-	r:50%;
+	r:45%;
 	animation-name: circle-swell;
 	animation-duration: 0.5s;
 }
