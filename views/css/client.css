@@ -1,22 +1,16 @@
-@keyframes circle-swell {
-	0% {r:30%;}
-	60% {r:45%;}
-	100% {r:30%;}
+#nav-button > circle{
+	opacity:0.3;
+	r:30%;
+	transition: 0.4s;
 }
+
 
 #nav-button:hover > circle{
-	r:30%;
-	animation-name: circle-swell;
-	animation-duration: 0.4s;
+	r:40%;
 	opacity: 1;
+	
 }
 
-/*
-#nav-button:not( :hover) > circle{
-	r:30%;
-	animation-name: circle-swell;
-	animation-duration: 0.5s;
-	animation-direction: reverse;
-}
-*/
+
+
 

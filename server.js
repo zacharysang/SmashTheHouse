@@ -13,13 +13,13 @@ var router = express.Router();
 
 //setting global values
 var path = __dirname + '/views/';
-var port = 3000;
+var port = 3006;
 var appid = "430107553824095";
 var host = '127.0.0.1:3000'
 var startTime = new Date();
 
 //set up localtunnel 
-
+/*
 var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel){
 	if(err){
 		console.log("Tunnel error: " + err);
@@ -27,7 +27,7 @@ var tunnel = localtunnel(port,{'subdomain':'smashthehouse'},function(err,tunnel)
 		console.log("Tunnel opened without error on port: " + port + " at: " + tunnel.url);
 	}
 });
-
+*/
 
 //set up session initialization for each client
 app.use(cookieParser("h,U']=wSI3\"iURoF&ex/TO7B\"V4xo2"));
