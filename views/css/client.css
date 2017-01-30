@@ -8,8 +8,13 @@
 
 .dev-box{
 	border: 1px solid red;
-	overflow: scroll;
+	overflow: none;
 }
+
+#svg-container{
+	transform:scale(0.7);
+}
+
 
 #nav-button > circle{
 	cx:50%;
@@ -21,7 +26,6 @@
 	stroke-width:1px;
 	stroke-dasharray:1,1,2,3,5,8;
 }
-
 
 #nav-button > text{
 	text-anchor:middle;
