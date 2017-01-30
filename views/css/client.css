@@ -1,7 +1,12 @@
 @keyframes circle-swell {
 	0% {r:30%;}
-	60% {r:45%;}
+	60% {r:40%;}
 	100% {r:30%;}
+}
+
+.dev-box{
+	border: 1px solid red;
+	overflow: scroll;
 }
 
 #nav-button:hover > circle{
