@@ -31,8 +31,9 @@ app.use(require('node-sass-middleware')({
   dest: '.',
   debug: true,
   outputStyle: 'compressed',
+  force: true,
   error:function(err){
-    console.log("something went wrong!");
+    console.log("Sass compilation error: " + err);
   }
 }));
 app.use(express.static(path.join(__dirname, 'public')));

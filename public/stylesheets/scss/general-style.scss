@@ -2,6 +2,7 @@
 $base-color: #450A45;
 $highlight-color: #773377;
 $dark-color: #181B29;
+$contrast-font-col: white;
 
 //sizes
 $std-padding: 20pt;
@@ -13,27 +14,27 @@ body {
   cursor: default;
   }
 
-a {
-  color: #00B7FF; 
-  }
-
 .header-bar {
-  background-color:$base-color;
-  height: 130px;
+  background-color: $base-color;
+  height: 20%;
   width: 100%;
-  padding-top: 50pt;
+  padding-top: 2.5rem;
+  padding-bottom:2.5rem;
 }
 
 .header-link {
   margin: 5%;
-  color: white;
-  padding-top: 30pt;
-  padding-bottom: 30pt;
-  padding-left: 50pt;
-  padding-right: 50pt;
+  color: $contrast-font-col;
   border-radius: 10pt;
   display: inline;
-  font-size: 30pt;
+  font-size: 2rem;
+
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+
 }
 
 .header-link:hover{
@@ -41,17 +42,25 @@ a {
   transition: 0.15s;
 }
 
-.side-bar {
-  background-color: $dark-color;
-  width: 20%;
-  height: 100%;
-  display: none;
+.header-link:not(hover){
+  background-color: inherit;
+  transition: 0.15s;
 }
 
-.side-bar:hover{
-  display: inline;
+.side-bar {
+  background-color: $dark-color;
+  color: $contrast-font-col;
+}
+
+.body-container:hover > .side-bar{
+  margin:0px;
+  padding:0px;
+  height: 100%;
+  min-width: 20px;
+  transition: 1s;
 }
 
 .body-container{
-  padding: $std-padding;
+  width:100%;
+  height: 80rem;
 }
