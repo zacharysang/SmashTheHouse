@@ -26,9 +26,9 @@ app.use(cookieParser());
 var sassSrc = path.join(__dirname, 'public','stylesheets','scss');
 var sassDest = path.join(__dirname, 'public');
 app.use(require('node-sass-middleware')({
-  root: 'public',
+  root: path.join('public','stylesheets'),
   src: 'scss',
-  dest: '',
+  dest: '.',
   debug: true,
   outputStyle: 'compressed',
   error:function(err){

@@ -31,3 +31,6 @@ npm-debug.log
 
 #configuration
 .env
+
+#compiled stylesheets
+*.css
