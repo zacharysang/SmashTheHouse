@@ -4,10 +4,9 @@ html
     title= title
     link(rel='stylesheet', href='general-style.css')
   body
-    div(class="header-bar")
-      div(class="header-link") main
-      div(class="header-link") chat
-      div(class="header-link") mo
+    ul(class="header-bar")
+        li(class="header-link" title="Home") Main
+        li(class="header-link" title="The latest stuff") News
+        li(class="header-link" title="mo..") mo
     div(class="body-container")
-      div(class="side-bar") test
       block content

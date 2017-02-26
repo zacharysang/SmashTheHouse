@@ -1,7 +1,7 @@
 //colors
 $base-color: #450A45;
 $highlight-color: #773377;
-$dark-color: #181B29;
+$dark-color: #212121;
 $contrast-font-col: white;
 
 //sizes
@@ -9,17 +9,22 @@ $std-padding: 20pt;
 
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
-  font-size: 20pt;
+  font-size: 1rem;
   margin: 0px;
   cursor: default;
+  background-color: $dark-color;
   }
 
 .header-bar {
   background-color: $base-color;
   height: 20%;
   width: 100%;
-  padding-top: 2.5rem;
-  padding-bottom:2.5rem;
+  margin-top:2.5rem;
+  margin-bottom:2.5rem;
+  padding-top: 1.7rem;
+  padding-bottom:2rem;
+  position: sticky;
+  top:0;
 }
 
 .header-link {
@@ -27,7 +32,7 @@ body {
   color: $contrast-font-col;
   border-radius: 10pt;
   display: inline;
-  font-size: 2rem;
+  font-size: 1.4rem;
 
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
@@ -39,28 +44,20 @@ body {
 
 .header-link:hover{
   background-color: $highlight-color;
-  transition: 0.15s;
+  transition: 0.2s;
 }
 
 .header-link:not(hover){
   background-color: inherit;
-  transition: 0.15s;
-}
-
-.side-bar {
-  background-color: $dark-color;
-  color: $contrast-font-col;
-}
-
-.body-container:hover > .side-bar{
-  margin:0px;
-  padding:0px;
-  height: 100%;
-  min-width: 20px;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .body-container{
-  width:100%;
+  width:50%;
+  max-width:80rem;
   height: 80rem;
+  margin: 0 auto;
+  padding:5rem;
+  background-color:white;
 }
+
