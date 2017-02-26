@@ -1,25 +1,55 @@
+//colors
 $base-color: #450A45;
+$highlight-color: #773377;
+$dark-color: #181B29;
+
+//sizes
 $std-padding: 20pt;
 
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 20pt;
   margin: 0px;
+  cursor: default;
   }
 
 a {
   color: #00B7FF; 
   }
 
-.nav-bar {
+.header-bar {
   background-color:$base-color;
-  height: 200px;
+  height: 130px;
   width: 100%;
-  padding: $std-padding;
+  padding-top: 50pt;
 }
 
-.nav-link {
+.header-link {
+  margin: 5%;
   color: white;
+  padding-top: 30pt;
+  padding-bottom: 30pt;
+  padding-left: 50pt;
+  padding-right: 50pt;
+  border-radius: 10pt;
+  display: inline;
+  font-size: 30pt;
+}
+
+.header-link:hover{
+  background-color: $highlight-color;
+  transition: 0.15s;
+}
+
+.side-bar {
+  background-color: $dark-color;
+  width: 20%;
+  height: 100%;
+  display: none;
+}
+
+.side-bar:hover{
+  display: inline;
 }
 
 .body-container{
