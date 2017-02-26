@@ -1,0 +1,27 @@
+$base-color: #450A45;
+$std-padding: 20pt;
+
+body {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
+  font-size: 20pt;
+  margin: 0px;
+  }
+
+a {
+  color: #00B7FF; 
+  }
+
+.nav-bar {
+  background-color:$base-color;
+  height: 200px;
+  width: 100%;
+  padding: $std-padding;
+}
+
+.nav-link {
+  color: white;
+}
+
+.body-container{
+  padding: $std-padding;
+}
