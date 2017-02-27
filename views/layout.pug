@@ -5,8 +5,11 @@ html
     link(rel='stylesheet', href='general-style.css')
   body
     ul(class="header-bar")
-        li(class="header-link" title="Home") Main
-        li(class="header-link" title="The latest stuff") News
-        li(class="header-link" title="mo..") mo
+        li(class="header-link" title="Home")
+          a(href="/") Main
+        li(class="header-link" title="The latest stuff")
+          a(href="/news") News
+        li(class="header-link" title="mo..")
+          a(href="/mo") Mo
     div(class="body-container")
       block content
