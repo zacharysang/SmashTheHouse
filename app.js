@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //registration of pages and binding to routes
 app.use('/', require('./routes/index'));
 app.use('/news',require('./routes/news'));
-app.use('/users', require('./routes/users'));
+app.use('/status',require('./routes/status'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
