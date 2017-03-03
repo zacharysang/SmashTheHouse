@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
 var app = express();
 
 // view engine setup
@@ -39,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/index'));
 app.use('/news',require('./routes/news'));
 app.use('/status',require('./routes/status'));
+app.use('/movies',require('./routes/movies'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -57,5 +58,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//mongoose.connect(process.env.MONGO_URL);
 
 module.exports = app;
