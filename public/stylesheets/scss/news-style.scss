@@ -1,0 +1,29 @@
+//colors
+$base-color: #450A45;
+$highlight-color: #773377;
+$dark-color: #212121;
+$contrast-font-col: white;
+
+.messages-container{
+  border-color: $dark-color;
+  border-width: 1px;
+  border-style: solid;
+
+  width:100%;
+}
+
+.message{
+  padding:1rem;
+  height:2rem;
+
+  border-width:1px;
+  border-color:$dark-color;
+  border-style: solid;
+  border-collapse: collapse;
+
+}
+
+.message-text, .message-sender{
+  padding: 0.5rem;
+  height: 2rem;
+}
