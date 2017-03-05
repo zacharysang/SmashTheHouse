@@ -4,7 +4,24 @@ var router = express.Router();
 
 /* GET news page. */
 router.get('/', function(req, res) {
-  res.render('news', { title: 'SmashTheHouse' });
+
+  //this may be able to be changed
+  Message.find(null,null,{
+    limit:30,
+    sort:{
+      timeStamp: 1
+    }
+  }, function(err,messages){
+    if(!err){
+      res.render('news',{
+        prev_messagees: messages
+      });
+    }else{
+      res.render('error');
+    }
+  });
+  //^
+
 });
 
 router.post('/',function(req,res){
