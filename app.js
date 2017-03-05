@@ -6,7 +6,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URL);
+mongoose.connection.on('error',function(){
+  console.error('Error connecting to MongoDB');
+});
+
 var app = express();
 
 // view engine setup
@@ -33,6 +39,7 @@ app.use(require('node-sass-middleware')({
     console.log("Sass compilation error: " + err);
   }
 }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 //registration of pages and binding to routes
@@ -58,7 +65,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-//mongoose.connect(process.env.MONGO_URL);
 
 module.exports = app;
