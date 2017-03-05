@@ -6,9 +6,8 @@ mixin message(msg)
         td(class="message-sender")= msg.sender
 
 block content
-    div(class="messages-container")
+    table(class="messages-container")
         for msg in prev_messages
-            tr
                 +message(msg)
     form(class="message-form" action="/news" method="POST")
         input(id="chat-input" type="textarea" name="message" placeholder="Enter your update here")

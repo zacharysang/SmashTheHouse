@@ -3,7 +3,25 @@ var Message = require('../models/news.js').Message;
 var router = express.Router();
 
 /* GET news page. */
-router.get('/', function(req, res) {
+router.get('/', renderMessages);
+  //^
+
+router.post('/',function(req,res){
+  var msg = Message();
+  msg.timeStamp = new Date();
+  msg.sender = "Zak";
+  msg.body = req.body.message;
+  msg.save(function(err,savedMsg){
+    if(err){
+      console.log('failed to send message');
+      res.render('error');
+    }else{
+      renderMessages(req,res);
+    }
+  });
+})
+
+function renderMessages(req, res){
 
   //this may be able to be changed
   Message.find(null,null,{
@@ -14,30 +32,12 @@ router.get('/', function(req, res) {
   }, function(err,messages){
     if(!err){
       res.render('news',{
-        prev_messagees: messages
+        prev_messages: messages
       });
     }else{
       res.render('error');
     }
   });
-  //^
-
-});
-
-router.post('/',function(req,res){
-  var msg = Message();
-  msg.timeStamp = new Date();
-  msg.sender = "Zak";
-  msg.body = req.body.message;
-  msg.save(function(err,savedMsg){
-    if(err){
-      console.log('failed to send message');
-      res.send(err);
-    }else{
-      res.render('news');
-      console.log('successfully saved message');
-    }
-  });
-})
+}
 
 module.exports = router;
