@@ -4,16 +4,19 @@ $highlight-color: #773377;
 $dark-color: #212121;
 $contrast-font-col: white;
 
+
 .messages-container{
   border-color: $dark-color;
   border-width: 1px;
   border-style: solid;
-
+  margin-bottom:1rem;
   width:100%;
+  overflow:scroll;
+  height:100%;
 }
 
 .message{
-  padding:1rem;
+  margin:3rem;
   height:2rem;
 
   border-width:1px;
@@ -21,9 +24,44 @@ $contrast-font-col: white;
   border-style: solid;
   border-collapse: collapse;
 
+  background-color: $highlight-color;
+  color:$contrast-font-col;
+
 }
 
 .message-text, .message-sender{
   padding: 0.5rem;
   height: 2rem;
+}
+
+.message-time{
+  float:right;
+  padding: 1rem;
+}
+
+.message-form{
+  width:100%;
+}
+
+#chat-input{
+  width:70%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+
+}
+
+#chat-submit{
+  background-color: $base-color;
+  color:$contrast-font-col;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  border-radius: 0.5rem;
+  border-style: none;
+  margin: 0 auto;
 }

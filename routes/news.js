@@ -4,11 +4,11 @@ var router = express.Router();
 
 /* GET news page. */
 router.get('/', renderMessages);
-  //^
 
 router.post('/',function(req,res){
   var msg = Message();
-  msg.timeStamp = new Date();
+  var currTime = new Date();
+  msg.timeStamp = formatTimeStamp(currTime);
   msg.sender = "Zak";
   msg.body = req.body.message;
   msg.save(function(err,savedMsg){
@@ -21,9 +21,15 @@ router.post('/',function(req,res){
   });
 })
 
+//helper functions go below here//
+
+function formatTimeStamp(currTime){
+  return currTime.getHours() + ":" + currTime.getMinutes() + " (" + currTime.getDay() +", " + currTime.getMonth() + " " + currTime.getDate() + ")";
+}
+
 function renderMessages(req, res){
 
-  //this may be able to be changed
+  //these arguments may be able to be changed
   Message.find(null,null,{
     limit:30,
     sort:{

@@ -2,16 +2,19 @@ extends layout
 
 mixin message(msg)
     tr(class="message")
+        td(class="message-sender")= msg.sender + " says..."
         td(class="message-text")= msg.body
-        td(class="message-sender")= msg.sender
+        td(class="message-time")= msg.timeStamp
 
 block content
     table(class="messages-container")
         for msg in prev_messages
                 +message(msg)
-    form(class="message-form" action="/news" method="POST")
-        input(id="chat-input" type="textarea" name="message" placeholder="Enter your update here")
-        input(id="chat-submit" type="submit" name="Submit")
+    form(class="message-form", action="/news", method="POST")
+        input(id="chat-input", type="textarea", name="message", placeholder="Enter your update here")
+        input(id="chat-submit", type="submit", name="Submit")
 
 block specific-links
     link(rel='stylesheet', href='news-style.css')
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js")
+    script(src="javascript/news.js")
