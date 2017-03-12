@@ -47,6 +47,8 @@ app.use('/', require('./routes/index'));
 app.use('/news',require('./routes/news'));
 app.use('/status',require('./routes/status'));
 app.use('/movies',require('./routes/movies'))
+app.use('/calendar',require('./routes/calendar'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

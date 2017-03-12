@@ -2,6 +2,8 @@ var express = require('express');
 var Message = require('../models/news.js').Message;
 var router = express.Router();
 
+const daysofweek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"];
+
 /* GET news page. */
 router.get('/', renderMessages);
 
@@ -24,7 +26,7 @@ router.post('/',function(req,res){
 //helper functions go below here//
 
 function formatTimeStamp(currTime){
-  return currTime.getHours() + ":" + currTime.getMinutes() + " (" + currTime.getDay() +", " + currTime.getMonth() + " " + currTime.getDate() + ")";
+  return currTime.getHours() + ":" + (currTime.getMinutes() < 10 ? "0" + currTime.getMinutes() : currTime.getMinutes()) + " (" + daysofweek[currTime.getDay()] +", " + (currTime.getMonth()+1) + "/" + currTime.getDate() + ")";
 }
 
 function renderMessages(req, res){

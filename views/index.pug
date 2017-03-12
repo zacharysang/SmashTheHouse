@@ -2,4 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #{title}, here are some of the things I can do for layout
+
+  div(class="preview-container")
+    h2 Keep you up to date on stuff
+    iframe(src="news")
+  div(class="preview-container")
+    h2 Help you keep track of calendar events
+    iframe(src="calendar")
+
+block specific-links
+  link(rel='stylesheet', href='home-style.css')
