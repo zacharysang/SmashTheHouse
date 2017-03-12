@@ -1,6 +1,11 @@
 extends layout
 
 block content
+  h1 Oh man, I think something's broken 
+  h2 (Or you did something wrong)
+
+block specific-links
   h1= message
   h2= error.status
-  pre #{error.stack}
+  #{error.stack}
+  style div{text-align: center;}
