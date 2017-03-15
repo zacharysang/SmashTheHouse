@@ -25,5 +25,5 @@ This is a simple website containing miscellaneous projects, gimmicks and gizmo's
     * community
   * customer check in
   * customer loyalty
-*Begin by mimicking existing sites
-*Tool to take existing site and to rework backend
+* Begin by mimicking existing sites
+* Tool to take existing site and to rework backend
