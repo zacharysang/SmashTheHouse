@@ -14,14 +14,16 @@ This is a simple website containing miscellaneous projects, gimmicks and gizmo's
 
 
 (in the works)
-*include manifest of what to include
-  *massively configurable
-  *information display
-    *menu
-    *location search
-    *offerings/ deals
-    *about
-    *hiring
-    *community
-  *customer check in
-  *customer loyalty
+* include manifest of what to include
+  * massively configurable
+  * information display
+    * menu
+    * location search
+    * offerings/ deals
+    * about
+    * hiring
+    * community
+  * customer check in
+  * customer loyalty
+*Begin by mimicking existing sites
+*Tool to take existing site and to rework backend
