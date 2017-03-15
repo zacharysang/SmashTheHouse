@@ -5,8 +5,8 @@ This is a simple website containing miscellaneous projects, gimmicks and gizmo's
 # Setup
 
 1. Copy the .env-example file to .env and add values as follows:
-..* PORT: The interal port number you would like to host traffic on
-..* MONGO_URL: The url addressing the mongo database where persistent storage is kept
+    * PORT: The interal port number you would like to host traffic on
+    * MONGO_URL: The url addressing the mongo database where persistent storage is kept
 
 2. Install dependencies: `npm install`
 
