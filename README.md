@@ -13,3 +13,15 @@ This is a simple website containing miscellaneous projects, gimmicks and gizmo's
 3. Run the application with npm (or whatever you want to use to run it): `npm start`
 
 
+(in the works)
+*include manifest of what to include
+  *massively configurable
+  *information display
+    *menu
+    *location search
+    *offerings/ deals
+    *about
+    *hiring
+    *community
+  *customer check in
+  *customer loyalty
