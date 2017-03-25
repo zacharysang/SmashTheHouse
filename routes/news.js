@@ -2,6 +2,7 @@ var express = require('express');
 var Message = require('../models/news.js').Message;
 var router = express.Router();
 var db_connected = require('../app.js').db_connected;
+var partial = require('../app.js').partial;
 
 const daysofweek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"];
 
@@ -42,7 +43,7 @@ function renderMessages(req, res){
       if(!err){
         res.render('news',{
           prev_messages: messages,
-          isPartial: req.query.partial == "true"
+          isPartial: partial
         });
       } else {
         res.render('error');
@@ -51,7 +52,7 @@ function renderMessages(req, res){
   } else {
     res.render('news',{
       prev_messages: [],
-      isPartial: req.query.partial == "true"
+      isPartial: partial
     });
   }
 }

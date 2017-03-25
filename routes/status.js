@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var os = require('os');
 var dns = require('dns');
+var partial = require('app.js').partial;
 
 /* GET news page. */
 router.get('/', function(req, res,next) {
@@ -11,7 +12,8 @@ router.get('/', function(req, res,next) {
     ipaddr: String(os.networkInterfaces()), 
     totalMem: os.totalmem()/1000000000, 
     freeMem: os.freemem()/1000000000, 
-    isPartial: req.query.partial == "true"});
+    isPartial: parital
+  });
 });
 
 module.exports = router;

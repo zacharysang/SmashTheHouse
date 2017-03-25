@@ -50,7 +50,10 @@ app.use(require('node-sass-middleware')({
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(function(req,res,next){
+  module.exports.partial = req.query.partial == true;
+  next();
+});
 //registration of pages and binding to routes
 app.use('/', require('./routes/index'));
 app.use('/news',require('./routes/news'));
