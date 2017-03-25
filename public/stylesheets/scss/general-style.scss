@@ -10,7 +10,7 @@ $std-padding: 20pt;
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 1rem;
-  margin: 0px;
+  margin-bottom: 8rem;
   cursor: default;
   background-color: $dark-color;
   }
@@ -18,6 +18,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+iframe {
+  border-style: solid;
 }
 
 .header-bar {
@@ -60,7 +64,6 @@ a {
 .body-container{
   width:50%;
   max-width:80rem;
-  height: 80rem;
   margin: 0 auto;
   padding:5rem;
   background-color:white;

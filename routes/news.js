@@ -1,6 +1,7 @@
 var express = require('express');
 var Message = require('../models/news.js').Message;
 var router = express.Router();
+var db_connected = require('../app.js').db_connected;
 
 const daysofweek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"];
 
@@ -30,22 +31,29 @@ function formatTimeStamp(currTime){
 }
 
 function renderMessages(req, res){
-
-  //these arguments may be able to be changed
-  Message.find(null,null,{
-    limit:30,
-    sort:{
-      timeStamp: 1
-    }
-  }, function(err,messages){
-    if(!err){
-      res.render('news',{
-        prev_messages: messages
-      });
-    }else{
-      res.render('error');
-    }
-  });
+  if(db_connected){
+    //these arguments may be able to be changed
+    Message.find(null,null,{
+      limit:30,
+      sort:{
+        timeStamp: 1
+      }
+    }, function(err,messages){
+      if(!err){
+        res.render('news',{
+          prev_messages: messages,
+          isPartial: req.query.partial == "true"
+        });
+      } else {
+        res.render('error');
+      }
+    });
+  } else {
+    res.render('news',{
+      prev_messages: [],
+      isPartial: req.query.partial == "true"
+    });
+  }
 }
 
 module.exports = router;

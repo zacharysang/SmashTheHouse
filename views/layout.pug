@@ -9,14 +9,18 @@ html
     link(rel='stylesheet', href='general-style.css')
     block specific-links
   body
-    ul(class="header-bar")
-        li(class="header-link", title="Home")
-          a(href="/") Main
-        li(class="header-link", title="Calendar")
-          a(href="/calendar") Calendar
-        li(class="header-link", title="The latest stuff")
-          a(href="/news") News
-        li(class="header-link", title="Movies")
-          a(href="/movies") Movies
-    div(class="body-container")
-      block content
+    if(!isPartial)
+      ul(class="header-bar")
+          li(class="header-link", title="Home")
+            a(href="/") Main
+          li(class="header-link", title="Calendar")
+            a(href="/calendar") Calendar
+          li(class="header-link", title="The latest stuff")
+            a(href="/news") News
+          li(class="header-link", title="Movies")
+            a(href="/movies") Movies
+      div(class="body-container")
+        block content
+    else
+      div(class="body-container")
+        block content

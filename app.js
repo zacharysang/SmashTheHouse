@@ -8,9 +8,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL,function(err){
+  if(err){
+    console.error('Error connecting to MongoDB');
+    module.exports.db_connected = false;
+  }else{
+    console.log('Connected to MongoDB');
+    module.exports.db_connected = true;
+  }
+});
+
 mongoose.connection.on('error',function(){
-  console.error('Error connecting to MongoDB');
+  
 });
 
 var app = express();
