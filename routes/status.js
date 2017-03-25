@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var os = require('os');
 var dns = require('dns');
-var partial = require('app.js').partial;
+var partial = require('../app.js').partial;
 
 /* GET news page. */
 router.get('/', function(req, res,next) {
