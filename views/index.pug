@@ -6,13 +6,15 @@ block content
 
   div(class="preview-container")
     h2 Help you pick movies
-    iframe(src="http://smashthehouse.website/movies?partial=true")
+    div(id="calendarframe")
   div(class="preview-container")
     h2 Keep you up to date on stuff
-    iframe(src="http://smashthehouse.website/news?partial=true")
+    iframe(src="/news?partial=true")
   div(class="preview-container")
     h2 Help you keep track of calendar events
     iframe(src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ppv0m1mm5m3142tobio8oh630c%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FNew_York")
 
 block specific-links
   link(rel='stylesheet', href='home-style.css')
+  script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+  script(type="text/javascript", src="/javascripts/home.js")

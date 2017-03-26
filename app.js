@@ -9,17 +9,14 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URL,function(err){
+  console.log('connect attempt complete');
   if(err){
-    console.error('Error connecting to MongoDB');
+    console.error('Error connecting to MongoDB: ' + err.message);
     module.exports.db_connected = false;
   }else{
     console.log('Connected to MongoDB');
     module.exports.db_connected = true;
   }
-});
-
-mongoose.connection.on('error',function(){
-  
 });
 
 var app = express();
@@ -28,15 +25,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-var sassSrc = path.join(__dirname, 'public','stylesheets','scss');
-var sassDest = path.join(__dirname, 'public');
 app.use(require('node-sass-middleware')({
   root: path.join('public','stylesheets'),
   src: 'scss',
@@ -51,7 +45,7 @@ app.use(require('node-sass-middleware')({
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req,res,next){
-  module.exports.partial = req.query.partial == true;
+  module.exports.partial = (req.query.partial) ? true : false;
   next();
 });
 //registration of pages and binding to routes

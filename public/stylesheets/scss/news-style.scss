@@ -1,22 +1,23 @@
 //colors
-$base-color: #450A45;
-$highlight-color: #773377;
-$dark-color: #212121;
+$base-col: #450A45;
+$highlight-col: #773377;
+$dark-col: #212121;
 $contrast-font-col: white;
+$error-col: #D46a6a;
 
 .messages-container{
-  border-color: $dark-color;
+  border-color: $dark-col;
   border-width: 1px;
   border-style: solid;
   margin-bottom:1rem;
   width:100%;
   height: 20rem;
-  overflow-y:scroll;
+  overflow-y: auto;
 }
 
 .message{
   border-radius: 0.3rem;
-  background-color: $highlight-color;
+  background-color: $highlight-col;
   color:$contrast-font-col;
   margin: 1.5rem;
   padding:0.5rem;
@@ -44,7 +45,7 @@ $contrast-font-col: white;
 }
 
 #chat-submit{
-  background-color: $base-color;
+  background-color: $base-col;
   color:$contrast-font-col;
 
   padding-left: 2rem;
@@ -55,4 +56,11 @@ $contrast-font-col: white;
   border-radius: 0.5rem;
   border-style: none;
   margin: 0 auto;
+}
+
+#db-connection-err{
+  background-color: $error-col;
+  color: $contrast-font-col;
+  padding: 1rem;
+  text-align: center;
 }

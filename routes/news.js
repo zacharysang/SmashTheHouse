@@ -1,7 +1,6 @@
 var express = require('express');
 var Message = require('../models/news.js').Message;
 var router = express.Router();
-var db_connected = require('../app.js').db_connected;
 var partial = require('../app.js').partial;
 
 const daysofweek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"];
@@ -31,30 +30,34 @@ function formatTimeStamp(currTime){
   return currTime.getHours() + ":" + (currTime.getMinutes() < 10 ? "0" + currTime.getMinutes() : currTime.getMinutes()) + " (" + daysofweek[currTime.getDay()] +", " + (currTime.getMonth()+1) + "/" + currTime.getDate() + ")";
 }
 
-function renderMessages(req, res){
+function fetchMessages(db_connected){
   if(db_connected){
-    //these arguments may be able to be changed
-    Message.find(null,null,{
+      Message.find(null,null,{
       limit:30,
       sort:{
         timeStamp: 1
       }
     }, function(err,messages){
       if(!err){
-        res.render('news',{
-          prev_messages: messages,
-          isPartial: partial
-        });
-      } else {
-        res.render('error');
+        return messages;
+      }else{
+        //log error with fetching messages
+        console.log("Error while fetching messages: " + err.message);
       }
     });
-  } else {
-    res.render('news',{
-      prev_messages: [],
-      isPartial: partial
-    });
   }
+
+  return [];
+}
+
+function renderMessages(req, res){
+  var db_connected = require('../app.js').db_connected;
+  console.log("is db connected? " + db_connected);
+  res.render('news',{
+    prev_messages: fetchMessages(db_connected),
+    isPartial: partial,
+    db_connected: db_connected
+  });
 }
 
 module.exports = router;
