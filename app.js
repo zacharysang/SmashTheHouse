@@ -1,4 +1,4 @@
-require('dotenv').config();
+var env = require('env.json');
 
 var express = require('express');
 var path = require('path');
@@ -8,8 +8,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URL,function(err){
-  console.log('connect attempt complete');
+
+mongoose.connect(env.MONGO_URL,function(err){
   if(err){
     console.error('Error connecting to MongoDB: ' + err.message);
     module.exports.db_connected = false;
