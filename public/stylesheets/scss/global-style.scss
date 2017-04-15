@@ -8,10 +8,12 @@ html {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 1rem;
   cursor: default;
+  height: 100rem;
   }
 
 body {
   margin: 0rem; //removes annoying space between header and window body
+  height: 100%;
 }
 
 a {
@@ -39,7 +41,7 @@ a {
 
   background-color: $navbar-color;
   color:white;
-  height: 20%;
+  height: 4rem;
   width: 100%;
   padding: 1.3rem 0rem;
   margin-top: 0rem;

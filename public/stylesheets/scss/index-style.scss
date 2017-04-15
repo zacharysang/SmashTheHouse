@@ -4,8 +4,10 @@ $base-color: white;
 
 body {
     background-color: $base-color;
+    overflow:hidden;
 }
 
-.navbar{
-    transform: translate(0,400%);
+div.navbar {
+    top: 30%;
+    position:absolute;
 }
