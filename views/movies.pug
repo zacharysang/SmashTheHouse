@@ -2,5 +2,11 @@ extends layout
 
 block content
     h1 Movies
-    
+    h2 Available movies:
+    ul.moviesList
+
+block append head
+    script(type="text/javascript", src="js/movies.js")
+            
+
     

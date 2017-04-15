@@ -1,15 +1,15 @@
 doctype html
 html
   head
-    title= title
-    meta(property="og:title", content="SmashTheHouse")
-    meta(property="og:type", content="website")
-    meta(property="og:url", content="http://smashthehouse.website")
-    meta(property="og:image", content="https://i1.sndcdn.com/avatars-000218739603-yeyinf-t500x500.jpg")
-    link(rel="stylesheet", href="global-style.css")
-    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
-    script(type="text/javascript", src="js/global.js")
-    block specific-links
+    block head
+      title= title
+      meta(property="og:title", content="SmashTheHouse")
+      meta(property="og:type", content="website")
+      meta(property="og:url", content="http://smashthehouse.website")
+      meta(property="og:image", content="https://i1.sndcdn.com/avatars-000218739603-yeyinf-t500x500.jpg")
+      link(rel="stylesheet", href="global-style.css")
+      script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+      script(type="text/javascript", src="js/global.js")
   body
     div.navbar
       div.homeLink
@@ -17,5 +17,5 @@ html
       div.moviesLink
         a.navLink(href="/movies") Movies
     div.grid-container
-      div.content-body
+      div.body-content
         block content

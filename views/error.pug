@@ -4,7 +4,7 @@ block content
   h1 Oh man, I think something's broken 
   h2 (Or you did something wrong)
 
-block specific-links
+block append head
   h1= message
   h2= error.status
   #{error.stack}
