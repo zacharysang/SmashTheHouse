@@ -1,20 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to smashthehouse.website, here are some of the things I can do for you
-
-  div(class="preview-container")
-    h2 Help you pick movies
-    div(id="calendarframe")
-  div(class="preview-container")
-    h2 Keep you up to date on stuff
-    iframe(src="/news?partial=true")
-  div(class="preview-container")
-    h2 Help you keep track of calendar events
-    iframe(src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ppv0m1mm5m3142tobio8oh630c%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FNew_York")
+  div.intro-content
+    h1= title
+    p Welcome to smashthehouse.website, here are some of the things I can do for you
 
 block specific-links
-  link(rel='stylesheet', href='home-style.css')
+  link(rel='stylesheet', href='index-style.css')
   script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
   script(type="text/javascript", src="/javascripts/home.js")

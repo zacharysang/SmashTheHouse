@@ -6,8 +6,9 @@ html
     meta(property="og:type", content="website")
     meta(property="og:url", content="http://smashthehouse.website")
     meta(property="og:image", content="https://i1.sndcdn.com/avatars-000218739603-yeyinf-t500x500.jpg")
-    link(rel='stylesheet', href='general-style.css')
+    link(rel='stylesheet', href='global-style.css')
     block specific-links
-  body.grid
-      ul(class="nav-bar")
-    block content
+  body
+    ul(class="nav-bar")
+    div.grid-container
+      block content

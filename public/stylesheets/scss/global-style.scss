@@ -4,16 +4,20 @@ $highlight-color: #773377;
 $dark-color: #212121;
 $contrast-font-col: white;
 
-//sizes
-$std-padding: 20pt;
 
-body {
+html,body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 1rem;
   cursor: default;
-  background-color: $dark-color;
+  background-color: $base-color;
+  margin: 0;
+  padding: 0;
   }
 
+.grid {
+  display: grid;
+  
+}
 
 .nav-bar {
   background-color: $base-color;
