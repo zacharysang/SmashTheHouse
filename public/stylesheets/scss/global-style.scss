@@ -3,7 +3,7 @@ $base-color: white;
 $navbar-color: blue;
 
 
-// Base styling
+// Base styling (Defaults and resets)
 html {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 1rem;
@@ -12,6 +12,11 @@ html {
 
 body {
   margin: 0rem; //removes annoying space between header and window body
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
 }
 
 // Navbar settings
@@ -49,11 +54,11 @@ body {
 }
 
 // Setup where each link will show up
-.helloLink {
+.homeLink {
   grid-column-start: 2;
 }
 
-.worldLink {
+.moviesLink {
   grid-column-start: 3;
 }
 

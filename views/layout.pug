@@ -6,13 +6,16 @@ html
     meta(property="og:type", content="website")
     meta(property="og:url", content="http://smashthehouse.website")
     meta(property="og:image", content="https://i1.sndcdn.com/avatars-000218739603-yeyinf-t500x500.jpg")
-    link(rel='stylesheet', href='global-style.css')
+    link(rel="stylesheet", href="global-style.css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+    script(type="text/javascript", src="js/global.js")
     block specific-links
   body
     div.navbar
-      div.helloLink
-        div.navLink Hello
-      div.worldLink
-        div.navLink World
+      div.homeLink
+        a.navLink(href="/") Home
+      div.moviesLink
+        a.navLink(href="/movies") Movies
     div.grid-container
-      block content
+      div.content-body
+        block content

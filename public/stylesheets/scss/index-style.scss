@@ -14,11 +14,10 @@ body {
     grid-row-gap:1rem;
     }
 
-.intro-content {
+.body-content {
     grid-column-start: 2;
 }
 
 .navbar{
-    position: absolute;
-    transform: translate(0,100%);
+    transform: translate(0,400%);
 }
