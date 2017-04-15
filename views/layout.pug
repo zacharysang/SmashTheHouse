@@ -8,16 +8,6 @@ html
     meta(property="og:image", content="https://i1.sndcdn.com/avatars-000218739603-yeyinf-t500x500.jpg")
     link(rel='stylesheet', href='general-style.css')
     block specific-links
-  body
-    if(!isPartial)
-      ul(class="header-bar")
-          li(class="header-link", title="Home")
-            a(href="/") Main
-          li(class="header-link", title="Calendar")
-            a(href="/calendar") Calendar
-          li(class="header-link", title="The latest stuff")
-            a(href="/news") News
-          li(class="header-link", title="Movies")
-            a(href="/movies") Movies
-    div(class="body-container")
-      block content
+  body.grid
+      ul(class="nav-bar")
+    block content
