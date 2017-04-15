@@ -1,13 +1,24 @@
+@import "global-style.scss";
+
 $base-color: white;
+
+body {
+    background-color: $base-color;
+}
 
 .grid-container {
     display: grid;
-    grid-template-columns: 0.5fr 3rem 0.5fr;
+    grid-template-columns: 0.5fr minmax(17rem,70%) 0.5fr;
     grid-template-rows: 1fr;
     grid-column-gap: 1rem;
     grid-row-gap:1rem;
     }
 
 .intro-content {
-    grid-column-start: 1;
+    grid-column-start: 2;
+}
+
+.navbar{
+    position: absolute;
+    transform: translate(0,100%);
 }

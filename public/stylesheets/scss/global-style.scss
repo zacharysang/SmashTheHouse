@@ -1,57 +1,59 @@
-//colors
-$base-color: #450A45;
-$highlight-color: #773377;
-$dark-color: #212121;
-$contrast-font-col: white;
+//Configuration variables
+$base-color: white;
+$navbar-color: blue;
 
 
-html,body {
+// Base styling
+html {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 1rem;
   cursor: default;
-  background-color: $base-color;
-  margin: 0;
-  padding: 0;
   }
 
-.grid {
-  display: grid;
-  
+body {
+  margin: 0rem; //removes annoying space between header and window body
 }
 
-.nav-bar {
-  background-color: $base-color;
+// Navbar settings
+.navbar {
+  display: grid;
+  grid-template-columns: 3rem 0.5fr 0.5fr 3rem; // Set columns for each link in navbar
+  grid-column-gap: 3rem;
+
+  background-color: $navbar-color;
+  color:white;
   height: 20%;
   width: 100%;
-  padding-left: 0;
-  margin-bottom:5rem;
-  padding-top: 1.7rem;
-  padding-bottom:2rem;
-  position: sticky;
+  padding: 1.3rem 0rem;
+  margin-top: 0rem;
+
+  position: sticky; //Makes navbar stick to top of window (moves along with scrolling)
   top:0;
 }
 
-.nav-link {
-  margin: 5%;
-  color: $contrast-font-col;
-  border-radius: 10pt;
-  display: inline;
+.navLink {
+  background-color:blue;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   font-size: 1.4rem;
-
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
-  padding-left: 2rem;
-  padding-right: 2rem;
-
 }
 
-.nav-link:hover{
-  background-color: $highlight-color;
+.navLink:hover{
+  filter: brightness(0.8);
   transition: 0.2s;
 }
 
-.nav-link:not(hover){
-  background-color: inherit;
+.navLink:not(hover){
+  filter:brightness(1);
   transition: 0.2s;
 }
+
+// Setup where each link will show up
+.helloLink {
+  grid-column-start: 2;
+}
+
+.worldLink {
+  grid-column-start: 3;
+}
+
