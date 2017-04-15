@@ -1,5 +1,4 @@
-var env = require('env.json');
-
+var env = require('./env');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -25,12 +24,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+//parse request info into request
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//load style preprocessing middleware
 app.use(require('node-sass-middleware')({
   root: path.join('public','stylesheets'),
   src: 'scss',
@@ -43,17 +44,23 @@ app.use(require('node-sass-middleware')({
   }
 }));
 
+//load middleware for static assets (images, client-side js, stylesheets, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req,res,next){
   module.exports.partial = (req.query.partial) ? true : false;
   next();
 });
-//registration of pages and binding to routes
-app.use('/', require('./routes/index'));
-app.use('/news',require('./routes/news'));
-app.use('/status',require('./routes/status'));
-app.use('/movies',require('./routes/movies'))
-app.use('/calendar',require('./routes/calendar'));
+
+//do routing for basic rendering functionality (get requests)
+app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
+  var targetUrl = req.params[0];
+  res.render(`${targetUrl}`,{
+    "title": targetUrl
+  });
+});
+
+//post requests and functionality more complex than rendering is handled by the api.js router object
+app.use(/^\/api\/([a-z0-9-_]*)\/?$/i,require('./api/api.js'));
 
 
 // catch 404 and forward to error handler
@@ -73,5 +80,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

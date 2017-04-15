@@ -30,7 +30,7 @@ node_modules
 npm-debug.log
 
 #configuration files
-.env
+env.json
 
 #compiled stylesheets
 *.css
