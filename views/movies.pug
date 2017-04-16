@@ -1,5 +1,11 @@
 extends layout
 
+mixin movie(mov)
+    li.movieItem
+        div.movHeader= `${mov.title} (${mov.releaseDate})`
+        div.moveDesc= mov.description
+
+
 block content
     h1 Movies
     h2 Available movies:

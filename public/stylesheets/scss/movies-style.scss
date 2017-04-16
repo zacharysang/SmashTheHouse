@@ -17,3 +17,12 @@ body {
     background-color: $navbar-color;
 }
 
+// Movie entry grid styling
+.movieItem {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+
+.movDesc {
+    margin-bottom: 10rem;
+}
