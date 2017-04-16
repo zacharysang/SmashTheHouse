@@ -52,17 +52,13 @@ app.use(function(req,res,next){
 });
 
 //do routing for basic rendering functionality (get requests)
-app.get(/\/([a-z0-9-_]*)\/?$/i,function(req,res){
-  console.log(`for the record: ${req.baseUrl}`);
+app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
   var targetUrl = req.params[0];
   res.render(`${targetUrl}`,{
     "title": targetUrl
   });
 });
 
-app.use(function(req,res){
-  console.log(`for the record (second): ${req.baseUrl}`);
-})
 //post requests and functionality more complex than rendering is handled by the api.js router object
 app.use('*/api/movies', api);
 
