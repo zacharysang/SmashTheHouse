@@ -2,7 +2,7 @@ var express = require('express');
 
 var router = express.Router();
 router.get('*',function(req,res){
-  res.movies = [{
+  var movies = [{
         "title": "f8"
         ,"description": "one last job"
         ,"releaseDate": "12/12/12"
@@ -17,7 +17,7 @@ router.get('*',function(req,res){
         ,"description": "somethings never change, but sometimes they do.."
         ,"releaseDate": "12/12/16"
     }];
-  res.send();
+  res.send(movies);
 });
 
 module.exports = router;
