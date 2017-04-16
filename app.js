@@ -5,8 +5,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var mongoose = require('mongoose');
+var api = require('./api/api');
 
 mongoose.connect(env.MONGO_URL,function(err){
   if(err){
@@ -60,8 +60,7 @@ app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
 });
 
 //post requests and functionality more complex than rendering is handled by the api.js router object
-app.use(/^\/api\/([a-z0-9-_]*)\/?$/i,require('./api/api.js'));
-
+app.use('/api/*', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
