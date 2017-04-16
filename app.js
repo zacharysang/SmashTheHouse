@@ -60,7 +60,7 @@ app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
 });
 
 //post requests and functionality more complex than rendering is handled by the api.js router object
-app.use('/api/*', api);
+app.use('/api/movies', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
