@@ -1,4 +1,4 @@
-var knownDate = moment("2017-04-09");
+var knownDate = moment("2017-04-10");
 
 var weeksSince = moment().diff(knownDate,'weeks',true);
 
