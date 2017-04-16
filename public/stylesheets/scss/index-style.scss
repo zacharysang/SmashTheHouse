@@ -3,6 +3,7 @@
 $navbar-color: #3B0BC0;
 $base-color: white;
 $font-color: black;
+$recycle-color: green;
 
 body {
     background-color: $base-color;
@@ -18,4 +19,9 @@ div.navbar {
 
 .navLink {
     background-color: $navbar-color;
+}
+
+.recycleDays {
+    font-size: 20pt;
+    color: $recycle-color;
 }
