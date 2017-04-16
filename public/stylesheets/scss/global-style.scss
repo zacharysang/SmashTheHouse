@@ -1,14 +1,9 @@
-//Configuration variables
-$base-color: white;
-$navbar-color: blue;
-
-
 // Base styling (Defaults and resets)
 html {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
   font-size: 1rem;
   cursor: default;
-  height: 100rem;
+  height: 35rem;
   }
 
 body {
@@ -39,7 +34,6 @@ a {
   grid-template-columns: 3rem 0.5fr 0.5fr 3rem; // Set columns for each link in navbar
   grid-column-gap: 3rem;
 
-  background-color: $navbar-color;
   color:white;
   height: 4rem;
   width: 100%;
@@ -51,7 +45,6 @@ a {
 }
 
 .navLink {
-  background-color:blue;
   padding: 1rem 2rem;
   border-radius: 1rem;
   font-size: 1.4rem;
