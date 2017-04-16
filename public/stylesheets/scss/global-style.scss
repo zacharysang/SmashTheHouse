@@ -16,6 +16,8 @@ a {
   color:inherit;
 }
 
+
+
 .grid-container {
     display: grid;
     grid-template-columns: 0.5fr minmax(17rem,70%) 0.5fr;
@@ -24,9 +26,12 @@ a {
     grid-row-gap:1rem;
     }
 
-.body-content {
+.body-content { 
     grid-column-start: 2;
+    margin: 4rem 0;
 }
+
+
 
 // Navbar settings
 .navbar {
@@ -63,9 +68,13 @@ a {
 // Setup where each link will show up
 .homeLink {
   grid-column-start: 2;
+  justify-self: center;
+  align-self: center;
 }
 
 .moviesLink {
   grid-column-start: 3;
+  justify-self: center;
+  align-self: center;
 }
 
