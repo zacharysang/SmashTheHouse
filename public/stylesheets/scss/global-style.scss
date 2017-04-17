@@ -9,6 +9,8 @@ html {
 body {
   margin: 0rem; //removes annoying space between header and window body
   height: 100%;
+  animation-name: simple;
+  animation-duration: 0.3s;
 }
 
 a {
@@ -78,3 +80,14 @@ a {
   align-self: center;
 }
 
+// Page Transitions
+
+@keyframes simple {
+  0% {
+    transform: translate(0,100%);
+  }  
+
+  100% {
+    transform: translate(0,0);
+  }
+}
