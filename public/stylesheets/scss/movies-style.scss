@@ -2,11 +2,17 @@
 
 $navbar-color: #DF0000;
 $base-color: #171515;
-$font-color: #FFDA4C;
+$font-color: black;
 
 body {
     background-color: $base-color;
     color: $font-color;
+}
+
+.body-content {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 2rem;
 }
 
 .navbar {
