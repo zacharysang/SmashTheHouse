@@ -31,16 +31,3 @@
   filter:brightness(1);
   transition: 0.2s;
 }
-
-// Setup where each link will show up
-.homeLink {
-  grid-column-start: 2;
-  justify-self: center;
-  align-self: center;
-}
-
-.moviesLink {
-  grid-column-start: 3;
-  justify-self: center;
-  align-self: center;
-}
