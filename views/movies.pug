@@ -1,12 +1,12 @@
-extends layout
+extends navbar
 
 mixin movie(mov)
     li.movieItem
         div.movHeader= `${mov.title} (${mov.releaseDate})`
         div.moveDesc= mov.description
 
-
 block content
+    include navbar.pug
     h1 Movies
     h2 Available movies:
     ul.moviesList

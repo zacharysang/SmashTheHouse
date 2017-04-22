@@ -3,7 +3,7 @@ html
   head
     block head
       title= title
-      meta(name="viewport",content="width=device-width, initial-scale=1")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
       meta(property="og:title", content="SmashTheHouse")
       meta(property="og:type", content="website")
       meta(property="og:url", content="http://smashthehouse.website")
@@ -12,11 +12,5 @@ html
       script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
       script(type="text/javascript", src="js/global.js")
   body
-    div.navbar
-      div.homeLink
-        a.navLink(href="/") Home
-      div.moviesLink
-        a.navLink(href="/movies") Movies
-    div.grid-container
-      div.body-content
+    div
         block content
