@@ -11,10 +11,8 @@ var env = require('./env')
 mongoose.connect(env.MONGO_URL,function(err){
   if(err){
     console.error('Error connecting to MongoDB: ' + err.message);
-    module.exports.db_connected = false;
   }else{
     console.log('Connected to MongoDB');
-    module.exports.db_connected = true;
   }
 });
 
