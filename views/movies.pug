@@ -1,4 +1,4 @@
-extends navbar
+extends layout
 
 mixin movie(mov)
     li.movieItem
@@ -6,13 +6,18 @@ mixin movie(mov)
         div.moveDesc= mov.description
 
 block content
+    div.gridContainer
+        div.contentContainer
+            h1 Movies
+            h2 Available movies:
+            ul.moviesList
+
+block append body
     include navbar.pug
-    h1 Movies
-    h2 Available movies:
-    ul.moviesList
 
 block append head
     script(type="text/javascript", src="js/movies.js")
+    link(rel='stylesheet', href='nav-style.css')
     link(rel='stylesheet', href='movies-style.css')
             
 

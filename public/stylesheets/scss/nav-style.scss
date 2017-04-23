@@ -1,25 +1,18 @@
-
 // Navbar settings
 .navbar {
-  display: grid;
-  grid-template-columns: 3rem 0.5fr 0.5fr 3rem; // Set columns for each link in navbar
-  grid-column-gap: 3rem;
-
-  color:white;
-  height: 4rem;
-  width: 100%;
-  padding: 1.3rem 0rem;
-  margin-top: 0rem;
-
-  position: sticky; //Makes navbar stick to top of window (moves along with scrolling)
-  top:0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
 }
+
 
 .navLink {
   padding: 1rem 2rem;
   border-radius: 0.6rem;
-  margin: 1rem 2rem;
+  margin: 0rem 0rem;
   font-size: 1.4rem;
+  display: inline-block;
+  width: 30%;
 }
 
 .navLink:hover{
