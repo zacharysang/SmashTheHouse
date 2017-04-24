@@ -40,15 +40,33 @@ body {
 }
 
 .navLink:hover{
-  //filter: brightness(0.8);
-  
   border: 0.15rem solid white;
   transition: 0.2s;
 }
 
 .navLink:not(hover){
-  //filter:brightness(1);
-  
   border: 0.15rem solid $navbar-color;
   transition: 0.2s;
 }
+
+table {
+  float: right;
+}
+
+.noticeTile {
+  width: 2rem;
+  height: 2rem;
+}
+
+.noticeTile[title="Rob"] {
+  background-color: #40bded;
+}
+
+.noticeTile[title="Recycling"] {
+  background-color: green;
+}
+
+.noticeMessage {
+  display: none;
+}
+

@@ -7,8 +7,17 @@ block content
       a(href="/") Home
     div.navLink
       a(href="/movies") Movies
+  div.noticeTiles
+    table
+      tr
+        td.noticeTile(title="Rob")
+        td.noticeTile(title="Recycling")
+      tr
+        td.noticeMessage(title="Rob") Rob is still dead, guys.
+        td.noticeMessage(title="Recycling") 
 
 block append head
   script(type='text/javascript', src='js/moment.min.js')
+  script(type='text/javascript', src='js/index.js')
   script(type='text/javascript', src='js/recycle.js')
   link(rel='stylesheet', href='index-style.css')
