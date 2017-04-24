@@ -36,19 +36,19 @@ body {
   font-size: 1.4rem;
   display: inline-block;
   width: 20%;
-  border: 0.1rem solid $navbar-color;
+  border: 0.15rem solid $navbar-color;
 }
 
 .navLink:hover{
   //filter: brightness(0.8);
   
-  border: 0.1rem solid white;
+  border: 0.15rem solid white;
   transition: 0.2s;
 }
 
 .navLink:not(hover){
   //filter:brightness(1);
   
-  border: 0.1rem solid $navbar-color;
+  border: 0.15rem solid $navbar-color;
   transition: 0.2s;
 }
