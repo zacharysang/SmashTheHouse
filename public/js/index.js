@@ -19,10 +19,10 @@ tileEls.each(function(index){
     var tileName = $(this).attr('title');
     $(this).hover(
         function(ev){
-            $(`[title="${$(ev.target).attr('title')}"] > .noticeMessage`).show();
+            $(`[title="${$(ev.target).parent().attr('title')}"] > .noticeMessage`).show();
         },
         function(ev){
-            $(`[title="${$(ev.target).attr('title')}"] > .noticeMessage`).hide();
+            $(`[title="${$(ev.target).parent().attr('title')}"] > .noticeMessage`).hide();
         }
     );
 });
