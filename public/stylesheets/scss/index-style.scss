@@ -49,24 +49,20 @@ body {
   transition: 0.2s;
 }
 
-table {
-  float: right;
-}
-
 .noticeTile {
   width: 2rem;
   height: 2rem;
 }
 
-.noticeTile[title="Rob"] {
+[title="Rob"] > .noticeTile {
   background-color: #40bded;
 }
 
-.noticeTile[title="Recycling"] {
+[title="Recycling"] > .noticeTile {
   background-color: green;
 }
 
-.noticeTile[title="Battery"] {
+[title="Battery"] > .noticeTile {
   background-color: black;
 }
 

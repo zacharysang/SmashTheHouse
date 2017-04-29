@@ -19,10 +19,10 @@ tileEls.each(function(index){
     var tileName = $(this).attr('title');
     $(this).hover(
         function(ev){
-            $(`.noticeMessage[title="${$(ev.target).attr('title')}"]`).show();
+            $(`[title="${$(ev.target).attr('title')}"] > .noticeMessage`).show();
         },
         function(ev){
-            $(`.noticeMessage[title='${$(ev.target).attr('title')}']`).hide();
+            $(`[title="${$(ev.target).attr('title')}"] > .noticeMessage`).hide();
         }
     );
 });
@@ -33,7 +33,7 @@ tileEls.each(function(index){
 function readBattery(battery){
 
     //read batter status into the notice message text
-    $(`.noticeMessage[title='Battery']`).text(`${battery.level*100}%`);
+    $(`[title="Battery"] > .noticeMessage`).text(`${battery.level*100}%`);
     
 
 }
