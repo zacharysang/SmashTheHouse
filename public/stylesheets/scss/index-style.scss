@@ -66,6 +66,10 @@ table {
   background-color: green;
 }
 
+.noticeTile[title="Battery"] {
+  background-color: black;
+}
+
 .noticeMessage {
   display: none;
 }
