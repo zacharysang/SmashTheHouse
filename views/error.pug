@@ -1,9 +1,9 @@
 extends layout
 
-block append head
-  #{error.stack}
-  style div{text-align: center;}
-
 block content
   h1 Oh man, I think something's broken 
   h2 (Or you did something wrong)
+
+block append head
+  #{error.stack}
+  style div{text-align: center;}
