@@ -1,13 +1,17 @@
-// try to get the batter status
-if(navigator.getBattery){
-    //if navigator holds promise
-    navigator.getBattery().then(readBattery);
-}if(navigator.battery){
-    //if navigator has battery object already (people shouldn't do this. it's old)
-    readBattery(navigator.battery);
-}else{
-    //not supported
+function printBattery(){
+    // try to get the batter status
+    if(navigator.getBattery){
+        //if navigator holds promise
+        navigator.getBattery().then(readBattery);
+    }if(navigator.battery){
+        //if navigator has battery object already (people shouldn't do this. it's old)
+        readBattery(navigator.battery);
+    }else{
+        //not supported
+    }
 }
+
+
 
 
 function readBattery(battery){
