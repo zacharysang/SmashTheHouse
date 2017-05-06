@@ -10,15 +10,21 @@ html {
 
 
 body {
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
+  //overflow: hidden;
+  margin: 0;
+  height: 100%;
 
   //page transition
   animation-name: simple;
   animation-duration: 0.3s;
 }
+
+.container {
+  height: 60%;
+}
+
+
+
 
 .hidden {
   display: none;
