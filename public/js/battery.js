@@ -20,7 +20,7 @@ function readBattery(battery){
     $(`[title="Battery"] > .noticeMessage`).text(`Battery: ${battery.level*100}%, Status: ${battery.charging ? 'Charging' : 'Not charging'}`);
 
     //read into the tile color
-    if(battery.level > 0.8){
+    if(battery.level > 0.7){
         $(`[title="Battery"] > .noticeTile`).css('background-color',`#00E500`);
     } else if(battery.level > 0.25){
         $(`[title="Battery"] > .noticeTile`).css('background-color',`yellow`);
