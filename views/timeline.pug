@@ -1,7 +1,14 @@
 extends layout
 
+mixin guideBox(count)
+    - for(var i = 0 ; i < count ; i++)
+        div.guideBox
+
+
 block content
-    div.calendar
+    div.workingArea
+        +guideBox(24)
+
         
 
 block append head

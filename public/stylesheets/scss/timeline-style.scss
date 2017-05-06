@@ -10,9 +10,23 @@ body {
     background-color: $navbar-color;
 }
 
-.workingarea {
+.workingArea {
     width: 100%;
-    height: 80%;
-    border: 0.1rem solid red;
     padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+
+.guideBox {
+    border: 1pt dashed black;
+    width: 8rem;
+    height: 8rem;
+}
+
+.guideBox.filled {
+    background-color: blue;
+}
+
