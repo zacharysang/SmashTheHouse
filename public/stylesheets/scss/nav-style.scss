@@ -10,6 +10,7 @@
 .navLink {
   padding: 1rem 1rem;
   border-radius: 0.6rem;
+  border: 0.15rem solid white;
   margin: 0.5rem 0.5rem;
   font-size: 1.4rem;
   display: inline-block;
@@ -17,12 +18,15 @@
 }
 
 .navLink:hover{
-  filter: brightness(0.8);
+  background-color: white;
+  border-color: inherit;
+  color: black;
   transition: 0.2s;
 }
 
 .navLink:not(hover){
-  filter:brightness(1);
+  background-color: inherit;
+  border: 0.15rem solid white;
   transition: 0.2s;
 }
 
