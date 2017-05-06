@@ -9,44 +9,17 @@ body {
     background-color: $base-color;
 }
 
+.navbar {
+    background-color: $navbar-color;
+    color: $base-color;
+}
+
 .recycleNote {
     text-align: center;
     font-size: 2rem;
     color: $recycle-color;
     margin-bottom: 5%;
     margin-top: 5%;
-}
-
-.home.bar {
-    background-color: $navbar-color;
-    color: $base-color;
-    width: 100%;
-    height: 20%;
-    text-align: center;
-}
-
-.navLink > a {
-  width: 100%;
-}
-
-.navLink {
-  padding: 1rem 2rem;
-  border-radius: 0.6rem;
-  margin: 1rem 2rem;
-  font-size: 1.4rem;
-  display: inline-block;
-  width: 20%;
-  border: 0.15rem solid $navbar-color;
-}
-
-.navLink:hover{
-  border: 0.15rem solid white;
-  transition: 0.2s;
-}
-
-.navLink:not(hover){
-  border: 0.15rem solid $navbar-color;
-  transition: 0.2s;
 }
 
 .noticeTile {
