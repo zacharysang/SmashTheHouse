@@ -10,3 +10,9 @@ $("a").click(function(ev){
     
 
 });
+
+
+//make the footer visible on full load
+$(document).on('animationend',function(){
+    $('footer.footer').removeClass('hidden');
+});

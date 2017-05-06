@@ -1,17 +1,8 @@
 extends layout
 
-mixin movie(mov)
-    li.movieItem
-        div.movHeader= `${mov.title} (${mov.releaseDate})`
-        div.moveDesc= mov.description
-
 block content
-    div.gridContainer
-        div.contentContainer
-            div.movieContent
-                h1 Movies
-                h2 Available movies:
-                ul.moviesList
+    div.calendar
+        
 
 block append head
     script(type="text/javascript", src="js/timeline.js")
