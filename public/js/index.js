@@ -16,8 +16,9 @@ tileEls.each(function(index){
 });
 
 //call the print functions for each tile function
-printBattery();
+readBattery();
 printRecycle();
 printRob();
+listenBuzzPress();
 
 });

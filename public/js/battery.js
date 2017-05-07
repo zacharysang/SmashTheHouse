@@ -1,11 +1,11 @@
-function printBattery(){
+function readBattery(){
     // try to get the batter status
     if(navigator.getBattery){
         //if navigator holds promise
-        navigator.getBattery().then(readBattery);
+        navigator.getBattery().then(printBattery);
     }if(navigator.battery){
         //if navigator has battery object already (people shouldn't do this. it's old)
-        readBattery(navigator.battery);
+        printBattery(navigator.battery);
     }else{
         //not supported
     }
@@ -14,7 +14,7 @@ function printBattery(){
 
 
 
-function readBattery(battery){
+function printBattery(battery){
 
     //read batter status into the notice message text
     $(`[title="Battery"] > .noticeMessage`).text(`Battery: ${battery.level*100}%, Status: ${battery.charging ? 'Charging' : 'Not charging'}`);
