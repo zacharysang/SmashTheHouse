@@ -3,7 +3,7 @@ function readBattery(){
     if(navigator.getBattery){
         //if navigator holds promise
         navigator.getBattery().then(printBattery);
-    }if(navigator.battery){
+    }else if(navigator.battery){
         //if navigator has battery object already (people shouldn't do this. it's old)
         printBattery(navigator.battery);
     }else{
@@ -19,6 +19,7 @@ function printBattery(battery){
     //if battery is missing, hide the tile
     if(battery == null){
         $('[title="Battery"] > .noticeTile').addClass('incompatible');
+        return;
     }
 
     //read batter status into the notice message text
