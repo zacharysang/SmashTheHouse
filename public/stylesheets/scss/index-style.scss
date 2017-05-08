@@ -47,10 +47,6 @@ body {
   display: none;
 }
 
-@keyframes whiteflash {
-
-  20% {
-    background-color: white;
-  }
-
+.incompatible {
+  display: none;
 }

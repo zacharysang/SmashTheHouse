@@ -8,6 +8,7 @@ function readBattery(){
         printBattery(navigator.battery);
     }else{
         //not supported
+        printBattery(null);
     }
 }
 
@@ -15,6 +16,10 @@ function readBattery(){
 
 
 function printBattery(battery){
+    //if battery is missing, hide the tile
+    if(battery == null){
+        $('[title="Battery"] > .noticeTile').addClass('incompatible');
+    }
 
     //read batter status into the notice message text
     $(`[title="Battery"] > .noticeMessage`).text(`Battery: ${battery.level*100}%, Status: ${battery.charging ? 'Charging' : 'Not charging'}`);
