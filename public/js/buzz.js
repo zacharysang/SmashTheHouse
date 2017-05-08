@@ -1,11 +1,11 @@
 function listenBuzzPress(){
-    $('[title="Buzz"] > .noticeTile').on('click',buzz);
+    $('[title="Buzz"] > .noticeTile').on('click',buzz(500));
 }
 
-function buzz(){
-    console.log('buzz called')
+function buzz(dur){
     if(navigator.vibrate){
-        console.log('buzzing!');
-        navigator.vibrate(500);
+        return function(){
+            navigator.vibrate(dur);
+        }
     }
 }
