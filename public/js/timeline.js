@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
-    $('.workingArea').on('mousedown touchstart',function(){
+    $('.workingArea').on('mousedown touchstart',function(ev){
+
+        ev.preventDefault();
+
         //when mouse is down, fill everything moused-enter
         $('.guideBox').on('mouseenter touchenter',function(){
             toggle(this);
