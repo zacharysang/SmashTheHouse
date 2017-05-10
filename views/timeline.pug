@@ -2,7 +2,7 @@ extends layout
 
 mixin guideBox(count)
     - for(var i = 0 ; i < count ; i++)
-        div.guideBox
+        div.guideBox(class=`box-${i}`)
 
 
 block content
