@@ -1,0 +1,23 @@
+$navbar-color: red;
+$base-color: white;
+$font-color: black;
+
+body {
+    background-color: $base-color;
+}
+
+.navbar {
+    background-color: $navbar-color;
+}
+
+.scoreSheet {
+    border-collapse: collapse;
+
+}
+
+.scoreSheet td {
+    border: 1px solid black;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+

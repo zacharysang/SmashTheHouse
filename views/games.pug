@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    table.scoreSheet
+        tr.names
+            td
+            td.person Derek
+            td.person Paxton
+            td.person Sam
+            td.person Tony
+            td.person Zak
+        tr.euchre
+            td.gameName Euchre
+            td.score
+            td.score
+            td.score
+            td.score
+            td.score
+
+
+        
+
+block append head
+    script(type="text/javascript", src="js/games.js")
+    link(rel='stylesheet', href='games-style.css')
