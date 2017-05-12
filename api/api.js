@@ -1,7 +1,7 @@
 var express = require('express');
 
 var router = express.Router();
-router.get('*',function(req,res){
+router.get('/movies',function(req,res){
   var movies = [{
         "title": "f8"
         ,"description": "one last job"

@@ -49,19 +49,24 @@ app.use(function(req,res,next){
   next();
 });
 
+//post requests and functionality more complex than rendering (Eg: loading data) is handled by the api.js router object
+app.use('/api/', api);
+
 //do routing for basic rendering functionality (get requests)
 app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
   var targetUrl = req.params[0];
+  
+  console.log('caught url: ' + targetUrl);
   res.render(`${targetUrl}`,{
     "title": targetUrl
   });
+
 });
 
-//post requests and functionality more complex than rendering is handled by the api.js router object
-app.use('*/api/movies', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  console.log(`not caught by any middleware...sending 404 (${req.url}) `);
   var err = new Error('Not Found');
   err.status = 404;
   next(err);

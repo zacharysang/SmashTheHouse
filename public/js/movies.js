@@ -1,10 +1,11 @@
 fetch('/api/movies')
 .then(function(res){
     // get the list out of the response
-    return res.json();
-}).then(function(res){
+   return res.json();
+})
+.then(function(res){
     var moviesList;
-    if(res !== undefined && res.length > 0){
+    if(res != {} && res !== undefined && res.length > 0){
         moviesList = res;
     }else{
         moviesList = [];
