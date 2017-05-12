@@ -50,8 +50,7 @@ app.use(function(req,res,next){
 });
 
 //post requests and functionality more complex than rendering (Eg: loading data) is handled by the api.js router object
-app.use('/api/', api);
-
+app.use(/\/api/, api);
 //do routing for basic rendering functionality (get requests)
 app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
   var targetUrl = req.params[0];
