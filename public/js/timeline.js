@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
     $('.workingArea').on('mousedown touchstart',function(ev){
-
-        ev.preventDefault();
+        
 
         //when mouse is down, fill everything moused-enter
         $('.guideBox').on('mouseenter touchenter',function(){
@@ -24,6 +23,10 @@ function toggle(JEl){
             $(JEl).addClass('filled');
         }
 
+}
+
+function resetFill(){
+    $('.guideBox[class*="filled"]').removeClass('filled');
 }
 
 //add collision detection and a better way to fill grid;
