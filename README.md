@@ -1,6 +1,6 @@
 # SmashTheHouse
 
-This is a simple website containing miscellaneous projects, gimmicks and gizmo's to be used primarily by me and my housemates.
+This is a simple website containing miscellaneous projects, gimmicks and gizm;o's to be used primarily by me and my housemates.
 
 # Setup
 
