@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div.container
+        div.bar#A
+        div.bar#B
+        div.bar#C
+        div.bar#D
+        div.bar#E
+    input#start(type="button", value="Start")
+
+block append head
+    script(type="text/javascript", src="js/scratch.js")
+    link(rel='stylesheet', href='scratch-style.css')
