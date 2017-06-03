@@ -8,7 +8,14 @@ var env = require('./env')
     ,mongoose = require('mongoose')
     ,api = require('./api/api');
 
-mongoose.connect(env.MONGO_URL,function(err){
+mongoose.connect(env.MONGO_URL,{
+  server: {
+    socketOptions: {
+      socketTimeoutMS: 0,
+      connectTimeoutMS: 0
+    }
+  }
+},function(err){
   if(err){
     console.error('Error connecting to MongoDB: ' + err.message);
   }else{
@@ -44,10 +51,6 @@ app.use(require('node-sass-middleware')({
 
 //load middleware for static assets (images, client-side js, stylesheets, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(function(req,res,next){
-  module.exports.partial = (req.query.partial) ? true : false;
-  next();
-});
 
 //post requests and functionality more complex than rendering (Eg: loading data) is handled by the api.js router object
 app.use(/\/api/, api);
@@ -55,7 +58,6 @@ app.use(/\/api/, api);
 app.get(/^\/([a-z0-9-_]*)\/?$/i,function(req,res){
   var targetUrl = req.params[0];
   
-  console.log('caught url: ' + targetUrl);
   res.render(`${targetUrl}`,{
     "title": targetUrl
   });

@@ -1,6 +1,6 @@
 @import "global-style.scss";
 
-$navbar-color: #3B0BC0;
+$navbar-color: #5E89B9;
 $base-color: white;
 $font-color: black;
 $recycle-color: green;
@@ -47,6 +47,7 @@ body {
   display: none;
 }
 
-.incompatible {
-  display: none;
+.house {
+  width: 100%;
+  height: 100%;
 }
