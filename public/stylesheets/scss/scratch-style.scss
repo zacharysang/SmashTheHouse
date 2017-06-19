@@ -2,39 +2,33 @@ $navbar-color: magenta;
 $base-color: white;
 $font-color: black;
 
-
-.bar{
-    width: 50px;
-    height: 200px;
-
-    margin: 10px;
-    border: 5px solid black;
-
-    position: absolute;
+.block {
+    width: 2rem;
+    height: 2rem;
     display: inline-block;
+    position: relative;
+    background-color:dodgerblue;
+    border: 2px solid black;
+
 }
 
-.bar#A {
-    background-color: blue;
-    height: 50px;
+.blockBox {
+    width: 40rem;
+    height: 40rem;
+
+    //flex things
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    //grid-template-columns: 1fr;
 }
 
-.bar#B {
-    background-color: red;
-    height: 100px;
-}
-
-.bar#C {
-    background-color: purple;
-    height: 150px;
-}
-
-.bar#D {
-    background-color: yellow;
-    height: 80px;
-}
-
-.bar#E {
-    background-color: green;
-    height: 120px;
+//stuff for async keys
+input[type="textarea"] {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem 0 3rem 0;
 }

@@ -1,30 +1,49 @@
-$(document).ready(function(){
+//proof that you can (or cannot) come back from a callback
 
-bars = $('.bar');
-offsets = [];
+//this function takes an arg and a callback
+function callbackCall(arg,fun) {
+    console.log(`arg: ${arg}`);
 
-for(var i = 0; i < bars.length; i++){
-    var offsetStr = `${(i+1)*100}`;
-    offsets.push(offsetStr);
-    bars.css('left',offsetStr);
+    fun();
+
 }
 
-$('#start').on('click',rotateBars);
+
+//now try to get the callback to return a function
+var res = 0;
+var myPromise = new Promise(function(resolve,reject){
+    
+});
+res = callbackCall(5,function(){
+
+})
 
 
+//code for async typing thing
+console.log(`res: ${res}`);
 
+$(document).ready(function(){
+    $('input.in').on('keypress',sendKey);
+    $('input.reset').click(function(ev){
+        $('input.in').val('');
+        $('input.out').attr('value','');
+    });
 });
 
-function rotateBars(ev){
-    for(i = 0; i < bars.length; i++){
-        $(bars[i]).animate({left:offsets[i]},200);
+//takes keypress event and sends it asyncronously to the out box
+function sendKey(ev){
 
+    //get key as str
+    var chr = String.fromCharCode(ev.charCode);
+
+    //wait
+    setTimeout(printKey(chr),(Math.random()*500) + 500);
+}
+
+function printKey(key){
+    return function(){
+        //this is done in a callback
+        var outBox = $('input.out');
+        $(outBox).attr('value',`${$(outBox).attr('value') || ''}` + key);
     }
-
-    for(i = 0; i < bars.length; i++){
-        //rotate offsets
-        bars[i] = bars[(i+1)%6];
-    }
-
-
 }

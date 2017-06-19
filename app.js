@@ -8,14 +8,7 @@ var env = require('./env')
     ,mongoose = require('mongoose')
     ,api = require('./api/api');
 
-mongoose.connect(env.MONGO_URL,{
-  server: {
-    socketOptions: {
-      socketTimeoutMS: 0,
-      connectTimeoutMS: 0
-    }
-  }
-},function(err){
+mongoose.connect(env.MONGO_URL,function(err){
   if(err){
     console.error('Error connecting to MongoDB: ' + err.message);
   }else{
@@ -36,7 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//load style preprocessing middleware
+//load style preprocessing middleware (only works for flat page structure)
 app.use(require('node-sass-middleware')({
   root: path.join('public','stylesheets'),
   src: 'scss',

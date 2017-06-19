@@ -1,14 +1,18 @@
 extends layout
 
+mixin makeBlocks(num)
+    while num-- > 0
+        div.block
+
 block content
-    div.container
-        div.bar DO NOT MOVE
-        div.bar#A
-        div.bar#B
-        div.bar#C
-        div.bar#D
-        div.bar#E
-    input#start(type="button", value="Start")
+    div.blockBox
+        +makeBlocks(40)
+    div.asyncBoxes
+        label(for="in") In:
+            input(type="textarea", name="in").in
+        label(for="out") Out:
+            input(type="textarea", name="out").out
+            input(type="button", name="reset", value="Reset").reset
 
 block append head
     script(type="text/javascript", src="js/scratch.js")
